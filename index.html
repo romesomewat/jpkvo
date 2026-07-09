@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SALE BRAVAT</title>
+  <meta name="description" content="Catalogue sale sản phẩm thiết bị vệ sinh BRAVAT" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-glow page-glow--gold"></div>
+  <div class="page-glow page-glow--red"></div>
+  <div class="lux-bubble lux-bubble--one"></div>
+  <div class="lux-bubble lux-bubble--two"></div>
+  <div class="lux-bubble lux-bubble--three"></div>
+
+  <header class="hero" id="pageTop">
+    <div class="hero-card hero-card--centered">
+      <div class="hero-copy hero-copy--top">
+        <p class="eyebrow" id="heroEyebrow">JPK VO - BRAVAT PREMIUM SALE</p>
+      </div>
+
+      <div class="brand-area" aria-label="Logo thương hiệu">
+        <div class="logo-tile logo-tile--jpkvo">
+          <img id="logoJpkvo" src="jpkvo.png" alt="JPK VO" />
+        </div>
+        <div class="logo-divider" aria-hidden="true"></div>
+        <div class="logo-tile logo-tile--bravat">
+          <img id="logoBravat" src="bravat.png" alt="BRAVAT" />
+        </div>
+      </div>
+
+      <div class="hero-copy hero-copy--bottom">
+        <h1 class="visually-hidden" id="heroTitle">SALE THIẾT BỊ VỆ SINH</h1>
+        <p class="hero-subtitle" id="heroSubtitle">42 MÃ SẢN PHẨM · SALE UP TO 60%</p>
+      </div>
+
+      <div class="hero-stats" aria-label="Thống kê catalogue" hidden>
+        <div class="stat-pill">
+          <strong id="totalProducts">0</strong>
+          <span id="totalProductsLabel">Sản phẩm</span>
+        </div>
+        <div class="stat-pill">
+          <strong id="maxDiscount">0%</strong>
+          <span id="maxDiscountLabel">Giảm cao nhất</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="catalogue-panel" aria-label="Danh mục sản phẩm sale">
+      <nav class="tabs" id="categoryTabs" role="tablist" aria-label="Nhóm sản phẩm"></nav>
+
+      <div class="toolbar">
+        <div class="toolbar-title">
+          <p class="section-label" id="sectionLabel">DANH MỤC ĐANG XEM</p>
+          <h2 id="categoryTitle">TOILET</h2>
+        </div>
+
+        <label class="search-box">
+          <span id="searchLabel">Tìm sản phẩm</span>
+          <input id="searchInput" type="search" placeholder="Nhập mã hoặc tên sản phẩm..." autocomplete="off" />
+        </label>
+      </div>
+
+      <div class="result-note" id="resultNote"></div>
+      <section class="product-grid" id="productGrid" aria-live="polite"></section>
+    </section>
+  </main>
+
+  <footer class="footer" id="pageBottom">
+    <div class="footer-main" id="footerMain" data-align="left">
+      <span class="footer-note" id="footerNote">GIÁ TRÊN CHƯA BAO GỒM VAT 8%</span>
+    </div>
+    <strong class="vat-note" id="footerVat" hidden></strong>
+  </footer>
+
+  <div class="floating-actions" aria-label="Điều hướng nhanh">
+    <button class="scroll-action" id="scrollBottomBtn" type="button" aria-label="Cuộn xuống cuối trang">TOP TO BOTTOM</button>
+    <button class="scroll-action scroll-action--dark" id="scrollTopBtn" type="button" aria-label="Cuộn lên đầu trang">BACK TO TOP</button>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
