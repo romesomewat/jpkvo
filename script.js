@@ -749,6 +749,12 @@ function renderStats() {
     count: total,
     maxDiscount
   }));
+  const heroPeriod = document.getElementById("heroPeriod");
+
+  if (heroPeriod) {
+    const periodText = content.hero?.period || "";
+    heroPeriod.textContent = periodText;
+    heroPeriod.hidden = !periodText;
 }
 
 function getCategoryList() {
