@@ -260,7 +260,7 @@
     {
       "id": 21,
       "category": "FAUCET",
-      "code": "F1173218BW-A9-ENG",
+      "code": "F1173218BW-A9-ENG/01",
       "name": "Vòi chậu thân cao",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -286,7 +286,7 @@
     {
       "id": 23,
       "category": "FAUCET",
-      "code": "F16061C-2-ENG",
+      "code": "F16061C-2-ENG/01",
       "name": "Vòi chậu thân thấp",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -299,7 +299,7 @@
     {
       "id": 24,
       "category": "FAUCET",
-      "code": "F16061C-A2-ENG",
+      "code": "F16061C-A2-ENG/01",
       "name": "Vòi chậu thân cao",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -325,7 +325,7 @@
     {
       "id": 26,
       "category": "FAUCET",
-      "code": "F251199CP-ENG",
+      "code": "F251199CP-ENG/01",
       "name": "Vòi chậu 3 lỗ (bao gồm họng xả)",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -338,7 +338,7 @@
     {
       "id": 27,
       "category": "FAUCET",
-      "code": "F118102C-1-ENG",
+      "code": "F118102C-1-ENG/01",
       "name": "Vòi chậu thân thấp (M)",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -351,7 +351,7 @@
     {
       "id": 28,
       "category": "FAUCET",
-      "code": "F118102C-2-ENG",
+      "code": "F118102C-2-ENG/01",
       "name": "Vòi chậu thân cao (L)",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -377,7 +377,7 @@
     {
       "id": 30,
       "category": "FAUCET",
-      "code": "F118102G-1-ENG",
+      "code": "F118102G-1-ENG/01",
       "name": "Vòi chậu thân thấp M",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -390,7 +390,7 @@
     {
       "id": 31,
       "category": "FAUCET",
-      "code": "F118102G-2-ENG",
+      "code": "F118102G-2-ENG/01",
       "name": "Vòi chậu thân cao (L)",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -403,7 +403,7 @@
     {
       "id": 32,
       "category": "FAUCET",
-      "code": "F1273308CP",
+      "code": "F1273308CP/01",
       "name": "Vòi chậu thân thấp",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -442,7 +442,7 @@
     {
       "id": 35,
       "category": "SHOWER",
-      "code": "F65193CP-A-ENG",
+      "code": "F65193CP-A-ENG/01",
       "name": "Cây sen gắn tường 3F (gạt)",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -455,7 +455,7 @@
     {
       "id": 36,
       "category": "SHOWER",
-      "code": "F699153BW-A2",
+      "code": "F699153BW-A2/01",
       "name": "Cây sen gắn tường nhiệt độ 3F",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -468,7 +468,7 @@
     {
       "id": 37,
       "category": "SHOWER",
-      "code": "F6172217CP-A-ENG",
+      "code": "F6172217CP-A-ENG/01",
       "name": "Cây sen gắn tường 3F- Tròn",
       "brand": "BRAVAT",
       "dimensions": "",
@@ -481,7 +481,7 @@
     {
       "id": 38,
       "category": "SHOWER",
-      "code": "F6276312CP-A-ENG",
+      "code": "F6276312CP-A-ENG/01",
       "name": "Cây Sen gắn tường nhiệt độ 3F-Vuông",
       "brand": "BRAVAT",
       "dimensions": "",
