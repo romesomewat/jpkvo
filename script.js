@@ -579,7 +579,9 @@ const DEFAULT_CONTENT = {
     "title": "SALE THIẾT BỊ VỆ SINH",
     "subtitle": "{count} MÃ SẢN PHẨM · SALE UP TO {maxDiscount}%",
     "totalProductsLabel": "Sản phẩm",
-    "maxDiscountLabel": "Giảm cao nhất"
+    "maxDiscountLabel": "Giảm cao nhất",
+    "period": "THỜI GIAN ÁP DỤNG SALE: TỪ 10/07/2026 ĐẾN HẾT NGÀY 31/10/2026",
+    "vatNote": "GIÁ TRÊN CHƯA GỒM THUẾ VAT 8%"
   },
   "navigation": {
     "tabsAriaLabel": "Nhóm sản phẩm",
@@ -617,8 +619,20 @@ const DEFAULT_CONTENT = {
     "bottomAriaLabel": "Cuộn xuống cuối trang"
   },
   "footer": {
-    "brand": "",
-    "note": "GIÁ TRÊN CHƯA BAO GỒM VAT 8%",
+    "company": "CTY TNHH JPK VÕ",
+    "addressTitle": "Địa chỉ:",
+    "showroomDanang": "Showroom Đà Nẵng: 382 Nguyễn Tri Phương, P. Hòa Cường, TP. Đà Nẵng",
+    "showroomHue": "Showroom Huế: 66 Phạm Văn Đồng, P. Vỹ Dạ, TP. Huế",
+    "hotlineLabel": "Hotline",
+    "hotline": "0946 122822",
+    "hotlineHref": "tel:0946122822",
+    "emailLabel": "Email",
+    "email": "info@jpkvo.com",
+    "emailHref": "mailto:info@jpkvo.com",
+    "websiteLabel": "Website",
+    "website": "jpkvo.com",
+    "websiteHref": "https://jpkvo.com",
+    "note": "",
     "vat": "",
     "noteAlign": "left"
   }
@@ -713,6 +727,18 @@ function applyContent() {
   setText("heroEyebrow", getText("hero.eyebrow", "JPK VO · BRAVAT PREMIUM SALE"));
   setText("heroTitle", getText("hero.title", "SALE THIẾT BỊ VỆ SINH"));
   setText("heroSubtitle", getText("hero.subtitle", ""));
+  const heroPeriod = document.getElementById("heroPeriod");
+  const heroPeriodText = getText("hero.period", "");
+  if (heroPeriod) {
+    heroPeriod.textContent = heroPeriodText;
+    heroPeriod.hidden = !String(heroPeriodText).trim();
+  }
+  const heroVatNote = document.getElementById("heroVatNote");
+  const heroVatNoteText = getText("hero.vatNote", "");
+  if (heroVatNote) {
+    heroVatNote.textContent = heroVatNoteText;
+    heroVatNote.hidden = !String(heroVatNoteText).trim();
+  }
   setText("totalProductsLabel", getText("hero.totalProductsLabel", "Sản phẩm"));
   setText("maxDiscountLabel", getText("hero.maxDiscountLabel", "Giảm cao nhất"));
   setText("sectionLabel", getText("toolbar.sectionLabel", "DANH MỤC ĐANG XEM"));
@@ -720,14 +746,75 @@ function applyContent() {
   if (searchInputEl) searchInputEl.placeholder = getText("toolbar.searchPlaceholder", "Nhập mã hoặc tên sản phẩm...");
   if (tabsEl) tabsEl.setAttribute("aria-label", getText("navigation.tabsAriaLabel", "Nhóm sản phẩm"));
   const footerMain = document.getElementById("footerMain");
-  const footerBrand = document.getElementById("footerBrand");
-  const footerBrandText = getText("footer.brand", "");
-  if (footerBrand) {
-    footerBrand.textContent = footerBrandText;
-    footerBrand.hidden = !String(footerBrandText).trim();
-  }
-  setText("footerNote", getText("footer.note", ""));
   if (footerMain) footerMain.dataset.align = getText("footer.noteAlign", "left");
+
+  const footerCompany = document.getElementById("footerCompany");
+  const footerCompanyText = getText("footer.company", getText("footer.brand", ""));
+  if (footerCompany) {
+    footerCompany.textContent = footerCompanyText;
+    footerCompany.hidden = !String(footerCompanyText).trim();
+  }
+
+  const footerNote = document.getElementById("footerNote");
+  const footerNoteText = getText("footer.note", "");
+  if (footerNote) {
+    footerNote.textContent = footerNoteText;
+    footerNote.hidden = !String(footerNoteText).trim();
+  }
+
+  const footerContact = document.getElementById("footerContact");
+  const contactFields = [
+    ["footerAddressTitle", getText("footer.addressTitle", "Địa chỉ:")],
+    ["footerShowroomDanang", getText("footer.showroomDanang", "")],
+    ["footerShowroomHue", getText("footer.showroomHue", "")],
+    ["footerHotlineLabel", getText("footer.hotlineLabel", "Hotline")],
+    ["footerEmailLabel", getText("footer.emailLabel", "Email")],
+    ["footerWebsiteLabel", getText("footer.websiteLabel", "Website")]
+  ];
+  contactFields.forEach(([id, value]) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.textContent = value;
+      el.hidden = !String(value).trim();
+    }
+  });
+
+  const footerHotline = document.getElementById("footerHotline");
+  const hotlineText = getText("footer.hotline", "");
+  if (footerHotline) {
+    footerHotline.textContent = hotlineText;
+    footerHotline.href = getText("footer.hotlineHref", hotlineText ? `tel:${String(hotlineText).replace(/[^\d+]/g, "")}` : "");
+    footerHotline.hidden = !String(hotlineText).trim();
+  }
+
+  const footerEmail = document.getElementById("footerEmail");
+  const emailText = getText("footer.email", "");
+  if (footerEmail) {
+    footerEmail.textContent = emailText;
+    footerEmail.href = getText("footer.emailHref", emailText ? `mailto:${emailText}` : "");
+    footerEmail.hidden = !String(emailText).trim();
+  }
+
+  const footerWebsite = document.getElementById("footerWebsite");
+  const websiteText = getText("footer.website", "");
+  if (footerWebsite) {
+    footerWebsite.textContent = websiteText;
+    footerWebsite.href = getText("footer.websiteHref", websiteText ? `https://${websiteText.replace(/^https?:\/\//, "")}` : "");
+    footerWebsite.hidden = !String(websiteText).trim();
+  }
+
+  if (footerContact) {
+    const hasContact = [
+      getText("footer.addressTitle", ""),
+      getText("footer.showroomDanang", ""),
+      getText("footer.showroomHue", ""),
+      hotlineText,
+      emailText,
+      websiteText
+    ].some((value) => String(value).trim());
+    footerContact.hidden = !hasContact;
+  }
+
   const footerVat = document.getElementById("footerVat");
   const footerVatText = getText("footer.vat", "");
   if (footerVat) {
@@ -750,11 +837,11 @@ function renderStats() {
     maxDiscount
   }));
   const heroPeriod = document.getElementById("heroPeriod");
-
   if (heroPeriod) {
-    const periodText = content.hero?.period || "";
+    const periodText = template(getText("hero.period", ""), { count: total, maxDiscount });
     heroPeriod.textContent = periodText;
-    heroPeriod.hidden = !periodText;
+    heroPeriod.hidden = !String(periodText).trim();
+  }
 }
 
 function getCategoryList() {

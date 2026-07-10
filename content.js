@@ -1,6 +1,6 @@
 // Nội dung chữ của website.
 // Nếu mở index.html trực tiếp bằng double click, hãy chỉnh file này để thấy thay đổi ngay.
-// Nếu chạy bằng Live Server/local server, web sẽ ưu tiên đọc content.json.
+// Nếu chạy bằng Live Server/local server hoặc GitHub Pages, web sẽ ưu tiên đọc content.json.
 window.SALE_BRAVAT_CONTENT = {
   "meta": {
     "pageTitle": "SALE BRAVAT",
@@ -20,9 +20,10 @@ window.SALE_BRAVAT_CONTENT = {
     "eyebrow": "JPK VO - BRAVAT PREMIUM SALE",
     "title": "SALE THIẾT BỊ VỆ SINH",
     "subtitle": "{count} MÃ SẢN PHẨM · SALE UP TO {maxDiscount}%",
-    "period": "Thời gian sale: 10/07/2026 đến hết ngày 31/10/2026",
     "totalProductsLabel": "Sản phẩm",
-    "maxDiscountLabel": "Giảm cao nhất"
+    "maxDiscountLabel": "Giảm cao nhất",
+    "period": "THỜI GIAN ÁP DỤNG SALE: TỪ 10/07/2026 ĐẾN HẾT NGÀY 31/10/2026",
+    "vatNote": "GIÁ TRÊN CHƯA GỒM THUẾ VAT 8%"
   },
   "navigation": {
     "tabsAriaLabel": "Nhóm sản phẩm",
@@ -60,8 +61,20 @@ window.SALE_BRAVAT_CONTENT = {
     "bottomAriaLabel": "Cuộn xuống cuối trang"
   },
   "footer": {
-    "brand": "",
-    "note": "GIÁ TRÊN CHƯA BAO GỒM VAT 8%",
+    "company": "CTY TNHH JPK VÕ",
+    "addressTitle": "Địa chỉ:",
+    "showroomDanang": "Showroom Đà Nẵng: 382 Nguyễn Tri Phương, P. Hòa Cường, TP. Đà Nẵng",
+    "showroomHue": "Showroom Huế: 66 Phạm Văn Đồng, P. Vỹ Dạ, TP. Huế",
+    "hotlineLabel": "Hotline",
+    "hotline": "0946 122822",
+    "hotlineHref": "tel:0946122822",
+    "emailLabel": "Email",
+    "email": "info@jpkvo.com",
+    "emailHref": "mailto:info@jpkvo.com",
+    "websiteLabel": "Website",
+    "website": "jpkvo.com",
+    "websiteHref": "https://jpkvo.com",
+    "note": "",
     "vat": "",
     "noteAlign": "left"
   }

@@ -971,23 +971,274 @@ body::before {
   }
 }
 
+/* =========================================================
+   SALE PERIOD + HEADER VAT NOTE + FOOTER CONTACT
+   ========================================================= */
+
+.hero-card--centered {
+  position: relative;
+}
+
 .hero-card--centered .hero-period {
   margin: -6px 0 0;
-  color: rgba(255, 246, 216, 0.72);
+  color: rgba(255, 246, 216, 0.74);
   font-size: clamp(11px, 0.95vw, 13px);
   line-height: 1.45;
-  font-weight: 800;
+  font-weight: 850;
   letter-spacing: 0.055em;
   text-transform: uppercase;
 }
 
-.hero-card--centered .hero-period[hidden] {
+.hero-card--centered .hero-period[hidden],
+.hero-card--centered .hero-vat-note[hidden] {
   display: none !important;
+}
+
+.hero-card--centered .hero-vat-note {
+  position: absolute;
+  right: clamp(34px, 6vw, 82px);
+  bottom: clamp(18px, 2.1vw, 30px);
+  z-index: 2;
+  max-width: min(360px, 42%);
+  margin: 0;
+  color: rgba(255, 241, 190, 0.82);
+  font-size: clamp(10px, 0.86vw, 12px);
+  line-height: 1.35;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  text-align: right;
+  text-shadow: 0 1px 16px rgba(0,0,0,0.22);
+  transform: translateX(-18px);
+}
+
+.footer--contact {
+  margin-top: 4px;
+  margin-bottom: 42px;
+}
+
+.footer--contact .footer-main {
+  display: grid;
+  gap: 11px;
+  padding: clamp(22px, 2.4vw, 32px);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 226, 122, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.90), rgba(255,250,237,0.78));
+  border: 1px solid rgba(113, 67, 4, 0.12);
+  box-shadow: 0 22px 56px rgba(80, 47, 0, 0.10), inset 0 1px 0 rgba(255,255,255,0.96);
+}
+
+.footer-company {
+  display: block;
+  color: #20180f;
+  font-size: clamp(16px, 1.5vw, 22px);
+  line-height: 1.2;
+  font-weight: 950;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.footer--contact .footer-note[hidden],
+.footer-contact[hidden],
+.footer-contact [hidden] {
+  display: none !important;
+}
+
+.footer-contact {
+  display: grid;
+  gap: 6px;
+  color: rgba(15, 15, 16, 0.70);
+  font-size: clamp(12.5px, 1.05vw, 14px);
+  line-height: 1.55;
+  font-weight: 760;
+  letter-spacing: 0.01em;
+}
+
+.footer-contact p {
+  margin: 0;
+}
+
+.footer-address-title {
+  margin-top: 2px !important;
+  color: #714304;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer-contact a {
+  color: #9b1111;
+  text-decoration: none;
+  font-weight: 920;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-main[data-align="center"] .footer-company,
+.footer-main[data-align="center"] .footer-contact {
+  text-align: center;
+}
+
+.footer-main[data-align="right"] .footer-company,
+.footer-main[data-align="right"] .footer-contact {
+  text-align: right;
+}
+
+.footer-main[data-align="left"] .footer-company,
+.footer-main[data-align="left"] .footer-contact {
+  text-align: left;
+}
+
+@media (max-width: 820px) {
+  .hero-card--centered .hero-vat-note {
+    position: static;
+    max-width: none;
+    transform: none;
+    text-align: center;
+    margin-top: -4px;
+  }
 }
 
 @media (max-width: 560px) {
   .hero-card--centered .hero-period {
     font-size: 9.8px;
     letter-spacing: 0.035em;
+  }
+
+  .hero-card--centered .hero-vat-note {
+    font-size: 9.5px;
+    letter-spacing: 0.03em;
+  }
+
+  .footer--contact .footer-main {
+    border-radius: 22px;
+    padding: 20px 16px;
+  }
+}
+
+/* =========================================================
+   HEADER SPACING FIX - SALE INFO CLEAN LAYOUT
+   Mục tiêu:
+   - Tách rõ dòng số lượng sale và dòng thời gian sale.
+   - Không để 2 dòng chữ dính chùm trong header.
+   - Giữ VAT nhỏ, nghiêng, nằm ở đuôi header nhưng không đè lên nội dung chính.
+   ========================================================= */
+
+.hero-card--centered {
+  min-height: clamp(292px, 29vw, 360px) !important;
+  gap: clamp(16px, 1.8vw, 22px) !important;
+  padding-top: clamp(32px, 4vw, 54px) !important;
+  padding-bottom: clamp(62px, 5.4vw, 84px) !important;
+}
+
+.hero-card--centered .hero-copy--bottom {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  justify-items: center;
+  gap: clamp(8px, 0.9vw, 12px);
+  width: 100%;
+  max-width: 980px;
+  margin: clamp(2px, 0.5vw, 6px) auto 0;
+  padding-left: clamp(12px, 2vw, 28px);
+  padding-right: clamp(12px, 2vw, 28px);
+}
+
+.hero-card--centered .hero-subtitle {
+  margin: 0 !important;
+  color: rgba(255,255,255,0.90) !important;
+  font-size: clamp(15px, 1.45vw, 22px) !important;
+  line-height: 1.08 !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.115em !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.22);
+}
+
+.hero-card--centered .hero-period {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(820px, 92%);
+  margin: 0 !important;
+  padding: 7px 16px;
+  border-radius: 999px;
+  color: rgba(255, 239, 190, 0.86) !important;
+  background: rgba(255,255,255,0.075);
+  border: 1px solid rgba(255, 235, 168, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.13);
+  font-size: clamp(10.5px, 0.84vw, 12.5px) !important;
+  line-height: 1.22 !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  text-align: center;
+  text-shadow: 0 1px 14px rgba(0,0,0,0.18);
+}
+
+.hero-card--centered .hero-vat-note {
+  right: clamp(54px, 6vw, 96px) !important;
+  bottom: clamp(24px, 2.8vw, 40px) !important;
+  max-width: min(360px, 38%) !important;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: rgba(255, 238, 181, 0.82) !important;
+  background: rgba(40, 20, 10, 0.18);
+  border: 1px solid rgba(255, 232, 164, 0.12);
+  font-size: clamp(9.5px, 0.74vw, 11.5px) !important;
+  line-height: 1.25 !important;
+  font-style: italic !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.045em !important;
+  text-align: right !important;
+  transform: translateX(-12px) !important;
+}
+
+@media (max-width: 820px) {
+  .hero-card--centered {
+    min-height: auto !important;
+    padding-bottom: clamp(30px, 5vw, 44px) !important;
+  }
+
+  .hero-card--centered .hero-copy--bottom {
+    gap: 8px;
+  }
+
+  .hero-card--centered .hero-vat-note {
+    position: static !important;
+    max-width: min(520px, 92%) !important;
+    margin-top: 0 !important;
+    transform: none !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-card--centered {
+    gap: 12px !important;
+    padding-top: 26px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .hero-card--centered .hero-subtitle {
+    font-size: 12px !important;
+    letter-spacing: 0.065em !important;
+    line-height: 1.18 !important;
+  }
+
+  .hero-card--centered .hero-period {
+    max-width: 100%;
+    padding: 6px 10px;
+    font-size: 9.5px !important;
+    line-height: 1.28 !important;
+    letter-spacing: 0.026em !important;
+  }
+
+  .hero-card--centered .hero-vat-note {
+    font-size: 9px !important;
+    letter-spacing: 0.02em !important;
   }
 }
