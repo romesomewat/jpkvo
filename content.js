@@ -20,6 +20,7 @@ window.SALE_BRAVAT_CONTENT = {
     "eyebrow": "JPK VO - BRAVAT PREMIUM SALE",
     "title": "SALE THIẾT BỊ VỆ SINH",
     "subtitle": "{count} MÃ SẢN PHẨM · SALE UP TO {maxDiscount}%",
+    "period": "Thời gian sale: 10/07/2026 đến hết ngày 31/10/2026",
     "totalProductsLabel": "Sản phẩm",
     "maxDiscountLabel": "Giảm cao nhất"
   },
